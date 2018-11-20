@@ -533,10 +533,10 @@ function drawPath()
     for(var canvi = 0;canvi<p.length;canvi++)
     {   context.beginPath();
         context.strokeStyle = colorSheet[canvi];
-        context.moveTo(pathSheet[canvi][0].x-1064,pathSheet[canvi][0].y-55);
+        context.moveTo(pathSheet[canvi][0].x-(document.body.clientWidth)+605,pathSheet[canvi][0].y-55);
         for(var canin = 0;canin<capacity+1;canin++)
         {
-            context.lineTo(pathSheet[canvi][canin+1][0].x-1064,pathSheet[canvi][canin+1][0].y-55);
+            context.lineTo(pathSheet[canvi][canin+1][0].x-(document.body.clientWidth)+605,pathSheet[canvi][canin+1][0].y-55);
         }
 
         context.stroke();
