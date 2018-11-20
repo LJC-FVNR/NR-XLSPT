@@ -73,7 +73,21 @@
                 </a>
             </li>
         </ul><br/><br/><br/><br/><br/><br/>
-        <p id="tip"> 选定定位种类，并在地图上选中一定个数位置坐标后，点选开始计算即可得到路径。</p>
+        <p id="tip"> 选定定位种类与载重数量限制，并在地图上点击一定个数位置后，点选计算路径即可得到路径。</p>
+        <form>
+            <select name="capacity" onchange="changeCap(this.value)">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4" selected="selected">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </form>
     </div>
 
     <div class="mid-footer">
