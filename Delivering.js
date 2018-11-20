@@ -504,8 +504,9 @@ function clearReset()
     //p,s,c对象计数
     pi = 0; si = 0; ci = 0;
 
-    var c=document.getElementById("pathline");
-    c.width=c.width;
+    var kn=document.getElementById("pathline");
+    kn.width=kn.width;
+    kn.height=kn.height;
 
     clearAll();
 
