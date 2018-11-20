@@ -1,0 +1,247 @@
+body
+{
+    margin:0;
+    background-color:#F1F1F1;
+}
+
+div#wrapper
+{
+    font-family:"微软雅黑";
+    margin:0;
+}
+
+div.Upper
+{
+    background-color:#555555;
+    height:50px;
+    box-shadow: 0px 2px 6px #888888;
+    position:relative;
+    margin:auto;
+    width:100%;
+}
+
+.Upper ul
+{
+    list-style-type:none;
+
+    overflow:hidden;
+    margin:0;
+    padding-left:10px;
+    height:50px;
+}
+.Upper li
+{
+    float:right;
+    height:50px;
+}
+li#logo
+{
+    float:left;
+    height:50px;
+    width:280px;
+    text-align:center;
+    padding-top:0px;
+    padding-left:15px;
+    color:white;
+}
+a#logoa
+{
+    margin:0;
+    width:280px;
+    text-align:left;
+}
+li#signin
+{
+    float:right;
+    text-align:center;
+    color:white;
+    margin-right:10px;
+}
+li#login
+{
+    float:right;
+    text-align:center;
+    color:white;
+    margin-left:10px;
+}
+
+.Upper a
+{
+    display:block;
+    width:80px;
+    background-color:#555555;
+    text-align:center;
+    padding-top:13px;
+    height:50px;
+    transition: all .2s ease;
+}
+#Ublock a:link {text-decoration:none;color:white;}    /* 未被访问的链接 */
+#Ublock a:visited {text-decoration:none;color:lightgrey} /* 已被访问的链接 */
+#Ublock a:hover {text-decoration:none;color:white;background-color:lightgrey;}   /* 鼠标指针移动到链接上 */
+#Ublock a:active {text-decoration:underline;color:white;background-color:lightgrey;}  /* 正在被点击的链接 */
+
+#login a:link {text-decoration:none;color:black;background-color:lightgrey;}    /* 未被访问的链接 */
+#login a:visited {text-decoration:none;color:black;background-color:lightgrey;} /* 已被访问的链接 */
+#login a:hover {text-decoration:none;color:white;background-color:grey;}   /* 鼠标指针移动到链接上 */
+#login a:active {text-decoration:underline;color:white;background-color:grey;}  /* 正在被点击的链接 */
+#login a
+{
+    display:block;
+    width:80px;
+    background-color:lightgrey;
+    text-align:center;
+    height:30px;
+    padding-top:8px;
+    border:floralwhite solid 1px;
+    margin-top:5px;
+}
+#signin a
+{
+    display:block;
+    width:80px;
+    text-align:center;
+    height:30px;
+    padding-top:8px;
+    border:dimgrey solid 1px;
+    margin-top:5px;
+}
+
+span#logo
+{
+    height:50px;
+    width:50px;
+    color:white;
+    padding-top:13px;
+}
+canvas#pathline
+{
+    position:fixed;
+    right:5px;
+    z-index:-1;
+    opacity:0.8;
+}
+
+
+img#map
+{
+    display: inline-block;
+    position:relative;
+    float:right
+}
+div.mid
+ {
+     margin:5px;
+     box-shadow: 0px 0px 6px #888888;
+     height:601px;
+     background-color:#F5F5F5;
+}
+div#mid-header
+{
+    width:800px;
+    height:120px;
+    padding-top:50px;
+    margin-left:35px;
+}
+div.mid-contain
+{
+    width:800px;
+    height:300px;
+    padding:20px;
+
+}
+div#mid-footer
+{
+    width:800px;
+    height:200px;
+    padding:20px;
+}
+h1
+{
+    margin-left:5px;
+    padding-left:15px;
+    margin-top:0;
+    border-left:dimgrey solid 7px;
+}
+#mid-header p
+{
+    margin-top:10px;
+    margin-left:5px;
+    color:dimgrey;
+    font-size:14px;
+}
+#mid-header ul
+{
+    padding-left:30px;
+}
+.mid-contain ul
+{
+    padding-left:30px;
+    list-style-type:none;
+}
+.mid-contain li
+{
+    float:left;
+    height:43px;
+}
+.mid-contain a
+{
+    cursor:pointer;
+    display:block;
+    width:130px;
+    text-align:center;
+    padding-top:10px;
+    height:31px;
+    border:#FAF6F3 solid thin;
+    background-color: #804950;
+    color:white;
+    transition: all .2s ease;
+    margin-bottom:10px;
+}
+p#tip
+{
+    padding-left:30px;
+    font-size:16px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-right:30px;
+}
+.mid-contain a:link {text-decoration:none;color:white;}    /* 未被访问的链接 */
+.mid-contain a:visited {text-decoration:none;color:orange} /* 已被访问的链接 */
+.mid-contain a:hover {text-decoration:none;color:white;background-color:darkorange;}   /* 鼠标指针移动到链接上 */
+.mid-contain a:active {text-decoration:none;color:white;background-color:orange;}  /* 正在被点击的链接 */
+
+.mid-footer a
+{
+    cursor:pointer;
+    float:left;
+    display:block;
+    width:120px;
+    text-align:center;
+    padding-top:10px;
+    margin-left:50px;
+    height:31px;
+    background-color: #a0726f;
+    color:white;
+    transition: all .2s ease;
+    box-shadow: 0px 0px 3px #888888;
+    border-left:grey solid 10px;
+}
+.mid-footer a:link {text-decoration:none;color:white;}    /* 未被访问的链接 */
+.mid-footer a:visited {text-decoration:none;color: #ff9b9e} /* 已被访问的链接 */
+.mid-footer a:hover {text-decoration:none;color:white;background-color: #ff5a70;}   /* 鼠标指针移动到链接上 */
+.mid-footer a:active {text-decoration:none;color:white;background-color: #ff475d;}  /* 正在被点击的链接 */
+img:hover
+{
+    transition:all .5s ease;
+}
+
+@keyframes myfirst
+{
+    from {opacity:0;}
+    to {opacity:0.7;}
+}
+@keyframes mylast
+{
+    from {opacity:0.7;}
+    to {opacity:0;}
+}

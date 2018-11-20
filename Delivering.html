@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>XLS</title>
+    <script src="Delivering.js"></script>
+    <link rel="stylesheet" type="text/css" href="Delivering.css" />
+</head>
+<body>
+<div id="wrapper">
+
+
+
+<div id="Ublock" class="Upper">
+
+
+    <ul>
+        <li id="logo">
+            <a id="logoa" href="">■  新零售</a>
+        </li>
+        <li id="signin"><a href="">注册</a></li>
+        <li id="login"><a href="">登录</a></li>
+        <li><a href="pd.html">配送</a></li>
+        <li><a href="Shop.html">商家</a></li>
+        <li><a href="Mall.html">商城</a></li>
+        <li><a href="User.html">用户</a></li>
+        <li><a href="home.html">主页</a></li>
+    </ul>
+</div>
+
+<div class="mid">
+    <canvas id="pathline" width="600px" height="600px"></canvas>
+    <img id="map" src="bg.png" onclick="cnvs_getCoordinates(event)"/>
+    <div id="mid-header">
+        <h1>配送模块</h1>
+        <ul>
+            <li>
+        <p>
+            本方案应用改进节约里程法，以商家为节约中心，依据配送员运力最大化，并最大程度减少在商家与顾客之间往返次数的原则，对新零售服装商家的同城配送模式进行最优路径规划。
+        </p>
+            </li>
+        </ul>
+    </div>
+    <div class="mid-contain">
+
+        <ul>
+            <li>
+                <a id="poster" onclick="clickPost();document.getElementById('poster').style.backgroundColor='#ff475d';
+                document.getElementById('shop').style.backgroundColor='#804950';
+                document.getElementById('customer').style.backgroundColor='#804950';">
+                    配送员定位
+                </a>
+            </li>
+            <li>
+                <a id="shop" onclick="clickShop();document.getElementById('poster').style.backgroundColor='#804950';
+                document.getElementById('shop').style.backgroundColor='#ff475d';
+                document.getElementById('customer').style.backgroundColor='#804950';">
+                    门店定位
+                </a>
+            </li>
+            <li>
+                <a id="customer" onclick="clickCustomer();document.getElementById('poster').style.backgroundColor='#804950';
+                document.getElementById('shop').style.backgroundColor='#804950';
+                document.getElementById('customer').style.backgroundColor='#ff475d';">
+                    客户定位
+                </a>
+            </li>
+            <li id="reset" class="reset">
+                <a onclick="clickReset();clearReset();document.getElementById('poster').style.backgroundColor='#804950';
+                document.getElementById('shop').style.backgroundColor='#804950';
+                document.getElementById('customer').style.backgroundColor='#804950';">
+                    重置
+                </a>
+            </li>
+        </ul><br/><br/>
+        <p id="tip"> 选定定位种类，并在地图上选中一定个数位置坐标后，点选开始计算即可得到路径。</p>
+    </div>
+
+    <div class="mid-footer">
+        <a onclick="mainGetRoute()">路径计算</a>
+    </div>
+
+
+</div>
+
+</div>
+
+
+</body>
+
+</html>
