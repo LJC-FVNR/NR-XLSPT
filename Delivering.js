@@ -382,10 +382,14 @@ function getPathSC()
 
 }
 
-
+function changeCap(Cap)
+{
+    capacity = Cap;
+}
 
 function mainGetRoute()
 {
+
     if(capacity>c.length){capacity = c.length;}
 getSavingSheet();
 sortSheet();
