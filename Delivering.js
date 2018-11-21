@@ -404,6 +404,7 @@ getPathSC();
 //console.log(pathSheet);
 drawPath();
 //clearAll();
+writePath();
 }
 
 function PathP()
@@ -511,6 +512,7 @@ function clearReset()
     var kn=document.getElementById("pathline");
     kn.width=kn.width;
     kn.height=kn.height;
+    kn.style.zIndex=-1;
 
     clearAll();
 
@@ -546,4 +548,20 @@ function drawPath()
         context.stroke();
         context.closePath();
     }
+}
+function writePath()
+{
+    var strPath ="";
+    for(var stri=0;stri<p.length;stri++)
+    {
+        strPath=strPath+"路径"+(stri+1)+":";
+        strPath=strPath+pathSheet[stri][0].name+"——";
+        for(var stin = 1;stin<capacity+2;stin++)
+        {
+            strPath=strPath+pathSheet[stri][stin][0].name+"——";
+        }
+        strPath=strPath +"结束"+"<br />"
+    }
+    document.getElementById("path").innerHTML = strPath;
+
 }
