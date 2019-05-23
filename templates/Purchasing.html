@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新零售服装平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="icon" href="../../static/lag/img/favicon.png" type="image/png"/>
+    <title>Lagoon Logistics</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../static/lag/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../../static/lag/vendors/linericon/style.css"/>
+    <link rel="stylesheet" href="../../static/lag/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../static/lag/vendors/owl-carousel/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="../../static/lag/vendors/nice-select/css/nice-select.css"/>
+    <link rel="stylesheet" href="../../static/lag/vendors/animate-css/animate.css"/>
+    <link rel="stylesheet" href="../../static/lag/vendors/jquery-ui/jquery-ui.css"/>
+    <!-- main css -->
+    <link rel="stylesheet" href="../../static/lag/css/style.css"/>
+    <link rel="stylesheet" href="../../static/lag/css/responsive.css"/>
+<body>
+<header class="header_area">
+    <div class="top_menu d-lg-block d-none">
+        <div class="container">
+            <div class="float-left">
+                <ul class="left_side">
+                    <li>
+                        <a href="{{ url_for('begin') }}">
+                            <i class="fa fa-globe"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-wechat"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-tags"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="float-right">
+                <ul class="right_side">
+                    <li>
+                        <a href="https://github.com/LJC-FVNR/NR-XLSPT">
+                            <i class="fa fa-envelope"></i>
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg w-100">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="{{ url_for('begin') }}">
+                <img alt="" src="../../static/lag/img/logo.png">
+            </a>
+            <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarSupportedContent"
+                    aria-label="Toggle navigation" type="button" data-target="#navbarSupportedContent"
+                    data-toggle="collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                <div class="row w-100">
+                    <div class="col-lg-12 pr-lg-0">
+                        <ul class="nav navbar-nav ml-auto justify-content-end">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('usermain') }}">主页</a>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" aria-expanded="false"
+                                   aria-haspopup="true" href="#" data-toggle="dropdown">导引</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('catabrand') }}">品牌</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('category') }}">类别</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" aria-expanded="false"
+                                   aria-haspopup="true" href="#" data-toggle="dropdown">用户</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('userinformation') }}">信息</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('userinformation') }}">购物车</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="https://github.com/LJC-FVNR/NR-XLSPT">联系</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+{% for cate in goods["costume"] %}
+    {% for article in goods["costume"][cate] %}
+        {% if article["ID"] == goods_id %}
+            <section class="blog_area single-post-area section_gap" style="padding-top:30px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8 col-md-8 posts-list">
+                            <div class="single-post">
+                                <div class="feature-img">
+                                    <img class="img-fluid" alt="" src="../../static/lag/goods/{{ article['pic'] }}">
+                                </div>
+                                <div class="blog_details">
+                                    <h2>{{ article['name'] }}</h2>
+                                    <ul class="blog-info-link mt-3 mb-4" style="margin-bottom: 8px !important;">
+                                        <li><a href="#"><i class="fa fa-user"></i> 品牌：{{ article['brand'] }}</a></li>
+                                        <li><a href="#"><i class="fa fa-comment-o"></i> 评价：{{ article['comment'] }}</a>
+                                        </li>
+                                    </ul>
+                                    <h2 style="color:#ff5853">售价：{{ article['price'] }}</h2>
+                                    <div class="quote-wrapper">
+                                        <div class="quotes">
+                                            {{ article['abstract'] }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-author">
+                                <div class="media align-items-center" style="padding-bottom:30px">
+                                    <img alt="" src="../../static/lag/goods/{{ article['pic'] }}">
+                                    <div class="media-body">
+                                        <a href="#">
+                                            <h4>{{ article['name'] }}</h4>
+                                        </a>
+                                        <p>
+                                            品牌：{{ article['brand'] }} | 类型：{{ article['category'] }}<br>
+                                            销量 ：{{ article['sales'] }} | 价格：{{ article['price'] }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row" style="display: inline;">
+                                    <button class="genric-btn danger-border w-50" type="submit">立即下单</button>
+                                    <button class="genric-btn danger-border w-50" type="submit">联系客服</button>
+                                </div>
+                            </div>
+
+                            <div class="navigation-top">
+                                <div class="d-sm-flex justify-content-between text-center">
+                                    <ul class="social-icons">
+                                        <li><a href="#"><i class="fa fa-weibo"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-wechat"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="comments-area">
+                                <h4>评论</h4>
+                                {% for com in article["comments"] %}
+                                    <div class="comment-list">
+                                        <div class="single-comment justify-content-between d-flex">
+                                            <div class="user justify-content-between d-flex">
+                                                <div class="thumb">
+                                                    <img alt="" src="img/blog/c1.png">
+                                                </div>
+                                                <div class="desc">
+                                                    <p class="comment">
+                                                        {{ com["content"] }}
+                                                    </p>
+
+                                                    <div class="d-flex justify-content-between">
+                                                        <div class="d-flex align-items-center">
+                                                            <h5>
+                                                                <a href="#">{{ com["user"] }}</a>
+                                                            </h5>
+                                                            <p class="date">{{ com["date"] }}</p>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                        <div class="col-4 col-md-4">
+                            <div class="blog_right_sidebar">
+
+                                <aside class="single_sidebar_widget tag_cloud_widget">
+                                    <h4 class="widget_title">颜色</h4>
+                                    <ul class="list">
+                                        {% for hue in article['hue'] %}
+                                            <li>
+                                                <a href="#">{{ hue }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <h4 class="widget_title">规格</h4>
+                                    <ul class="list cat-list">
+                                        {% for norm in article['norms'] %}
+                                            <li>
+                                                <a href="#">{{ norm }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </aside>
+
+                                <aside class="single_sidebar_widget newsletter_widget">
+                                    <h4 class="widget_title">数量</h4>
+                                    <form action="#">
+                                        <div class="form-group">
+                                            <input class="form-control" required="" type="email" placeholder="数量">
+                                        </div>
+                                    </form>
+                                </aside>
+
+                                <aside class="single_sidebar_widget tag_cloud_widget">
+                                    <h4 class="widget_title">门店选择</h4>
+                                    <ul class="list">
+                                        <li>
+                                            <a href="#">门店A</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">门店B</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">门店C</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">门店D</a>
+                                        </li>
+                                    </ul>
+                                    <h4 class="widget_title">取货方式</h4>
+                                    <ul class="list">
+                                        <li>
+                                            <a href="#">自提</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">配送</a>
+                                        </li>
+                                    </ul>
+                                    <button class="button main_btn w-100" type="submit">立即下单</button>
+                                </aside>
+
+                                <aside class="single_sidebar_widget popular_post_widget">
+                                    <h3 class="widget_title">猜你喜欢</h3>
+                                    {% for id in ids %}
+                                        {% for c in goods["costume"] %}
+                                            {% for a in goods["costume"][c] %}
+                                                {% if id == a["ID"] %}
+                                                    <div class="media post_item">
+                                                        <img alt="post" src="../../static/lag/goods/{{ a["pic"] }}"
+                                                             style="max-width: 30%">
+                                                        <div class="media-body">
+                                                            <a href="{{ url_for('purchasing',goods_id=a["ID"]) }}">
+                                                                <h3>{{ a["name"] }}</h3>
+                                                            </a>
+                                                            <p>价格：{{ a["price"] }}</p>
+                                                        </div>
+                                                    </div>
+                                                {% else %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endfor %}
+                                    {% endfor %}
+                                </aside>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% else %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+<footer class="footer-area section_gap" style="padding: 100px 0px;margin:0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h6>关于我们</h6>
+                    <p>
+                        Research of the transformation for classic apparel industry - facing to New Retail
+                    </p>
+                    <p>16LE - COME - TJU</p>
+                </div>
+            </div>
+            <div class="col-lg-5  col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h6>服装新零售平台</h6>
+                    <p>大学生创新创业项目：面向传统服装业转型的新零售解决方案</p>
+                    <div id="mc_embed_signup">
+                        <div style="position: absolute; left: -5000px;">
+                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" type="text" value="">
+                        </div>
+                        <div class="info"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+                <div class="single-footer-widget">
+                    <h6>关注我们</h6>
+                    <p>平台源代码见</p>
+                    <div class="footer-social d-flex align-items-center">
+                        <a href="https://github.com/LJC-FVNR/NR-XLSPT"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            copyright
+        </div>
+    </div>
+</footer>
+<!--JavaScripts========================== -->
+<script src="../../static/lag/js/jquery-3.2.1.min.js"></script>
+<script src="../../static/lag/js/popper.js"></script>
+<script src="../../static/lag/js/bootstrap.min.js"></script>
+<script src="../../static/lag/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="../../static/lag/vendors/isotope/isotope-min.js"></script>
+<script src="../../static/lag/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="../../static/lag/js/jquery.ajaxchimp.min.js"></script>
+<script src="../../static/lag/js/mail-script.js"></script>
+<script src="../../static/lag/js/custom.js"></script>
+</body>
+
+</html>

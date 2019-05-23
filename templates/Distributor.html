@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新零售服装平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="icon" href="../static/lag/img/favicon.png" type="image/png"/>
+    <title>Lagoon Logistics</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/lag/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/linericon/style.css"/>
+    <link rel="stylesheet" href="../static/lag/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/owl-carousel/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/nice-select/css/nice-select.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/animate-css/animate.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/jquery-ui/jquery-ui.css"/>
+    <!-- main css -->
+    <link rel="stylesheet" href="../static/lag/css/style.css"/>
+    <link rel="stylesheet" href="../static/lag/css/responsive.css"/>
+<body>
+<header class="header_area">
+    <div class="top_menu d-lg-block d-none">
+        <div class="container">
+            <div class="float-left">
+                <ul class="left_side">
+                    <li>
+                        <a href="{{ url_for('begin') }}">
+                            <i class="fa fa-globe"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-wechat"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-tags"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="float-right">
+                <ul class="right_side">
+                    <li>
+                        <a href="https://github.com/LJC-FVNR/NR-XLSPT">
+                            <i class="fa fa-envelope"></i>
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg w-100">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="{{ url_for('begin') }}">
+                <img alt="" src="../static/lag/img/logo.png">
+            </a>
+            <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarSupportedContent"
+                    aria-label="Toggle navigation" type="button" data-target="#navbarSupportedContent"
+                    data-toggle="collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                <div class="row w-100">
+                    <div class="col-lg-12 pr-lg-0">
+                        <ul class="nav navbar-nav ml-auto justify-content-end">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ url_for('distributor') }}">主页</a>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" aria-expanded="false"
+                                   aria-haspopup="true" href="#" data-toggle="dropdown">导引</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('catabrand') }}">品牌</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('category') }}">类别</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" aria-expanded="false"
+                                   aria-haspopup="true" href="#" data-toggle="dropdown">用户</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('distributor') }}">信息</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('distributor') }}">购物车</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="https://github.com/LJC-FVNR/NR-XLSPT">联系</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="row justify-content-center section-title-wrap" style="margin-bottom: 30px">
+    <div class="col-lg-12">
+        <h5 style="color:#38a4ff">Merchants</h5>
+        <h2>
+            商家管理平台
+        </h2>
+    </div>
+</div>
+<hr>
+
+<section class="quote-area">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-lg-12">
+                <div class="estimated-cost">
+                    <form class="form-wrap" action="#">
+                        <nav class="justify-content-center">
+                            <div class="nav nav-tabs justify-content-center justify-content-center" id="nav-tab"
+                                 role="tablist">
+                                <a class="nav-item nav-link active show" id="basic-tab" role="tab"
+                                   aria-selected="true" aria-controls="basic" href="#basic"
+                                   data-toggle="tab">基本信息</a>
+                                <a class="nav-item nav-link" id="cargo-tab" role="tab" aria-selected="false"
+                                   aria-controls="cargo" href="#cargo" data-toggle="tab">商品管理</a>
+                                <a class="nav-item nav-link" id="order-tab" role="tab" aria-selected="false"
+                                   aria-controls="order" href="#order" data-toggle="tab">订单管理</a>
+                                <a class="nav-item nav-link" id="service-tab" role="tab" aria-selected="false"
+                                   aria-controls="service" href="#service" data-toggle="tab">客户服务</a>
+                                <a class="nav-item nav-link" id="trade-tab" role="tab" aria-selected="false"
+                                   aria-controls="trade" href="#trade" data-toggle="tab">交易数据</a>
+                                <a class="nav-item nav-link" id="employee-tab" role="tab" aria-selected="false"
+                                   aria-controls="employee" href="#employee" data-toggle="tab">员工管理</a>
+                            </div>
+                        </nav>
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade active show" id="basic" role="tabpanel"
+                                 aria-labelledby="basic-tab">
+                                <div class="container border-top-generic blog_area single-post-area section_gap posts-list"
+                                     style="padding-top:20px">
+                                    <div class="blog-author" style="margin-top:10px">
+                                        <div class="media align-items-center" style="padding-bottom:30px">
+                                            <img alt="" src="../../static/lag/goods/goods5.jpg">
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <h4>商家：大饼鸡蛋</h4>
+                                                </a>
+                                                <p>
+                                                    门店类型：新零售服装业解决方案用户<br/>
+                                                    门店编号：30105894<br/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <h4>信息设置</h4>
+                                        <hr/>
+                                        <div class="row" style="margin:0;padding:5px">
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">品牌信息</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal;">
+                                                        门店所属品牌：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    煎饼王</h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">门店地址</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal">
+                                                        门店所在位置：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    卫津路92号</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin:0;padding:5px">
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">平台认证</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal;">
+                                                        是否经过认证：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    是</h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">经营许可</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal">
+                                                        门店经营许可：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    已查询</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin:0;padding:5px">
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">门店配置</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal;">
+                                                        门店过户：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    是</h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">门店升级</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal">
+                                                        门店配置升级：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    待处理</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="tab-pane fade" id="cargo" role="tabpanel"
+                                 aria-labelledby="cargo-tab">
+                                <div class="container border-top-generic blog_area single-post-area section_gap posts-list"
+                                     style="padding-top:20px">
+                                    <div class="blog-author" style="margin-top:10px">
+                                        <hr/>
+                                        <h4>商品管理</h4>
+                                        <hr/>
+                                        <div class="media align-items-center" style="padding-bottom:30px">
+                                            <img alt="" src="../../static/lag/goods/goods4.jpg">
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <h4>商品：A</h4>
+                                                </a>
+                                                <p>
+                                                    商品编号：30115602<br/>
+                                                    门店：DBJD<br/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin:0;padding:5px">
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">价格配置</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal;">
+                                                        商品价格：</h4>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                        30</h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">库存控制</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal">
+                                                        库存量：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    590</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="media align-items-center" style="padding-bottom:30px">
+                                            <img alt="" src="../../static/lag/goods/goods2.jpg">
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <h4>商品：B</h4>
+                                                </a>
+                                                <p>
+                                                    商品编号：30115603<br/>
+                                                    门店：DBJD<br/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin:0;padding:5px">
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">价格配置</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal;">
+                                                        商品价格：</h4>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                        37</h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">库存控制</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal">
+                                                        库存量：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    1200</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="media align-items-center" style="padding-bottom:30px">
+                                            <img alt="" src="../../static/lag/goods/goods5.jpg">
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <h4>商品：C</h4>
+                                                </a>
+                                                <p>
+                                                    商品编号：30115607<br/>
+                                                    门店：DBJD<br/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin:0;padding:5px">
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">价格配置</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal;">
+                                                        商品价格：</h4>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                        120</h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">库存控制</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal">
+                                                        库存量：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    800</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tab-pane fade" id="order" role="tabpanel"
+                                 aria-labelledby="order-tab">
+                                <div class="container border-top-generic blog_area single-post-area section_gap posts-list"
+                                     style="padding-top:20px">
+                                    <div class="blog-author" style="margin-top:10px">
+                                        <hr/>
+                                        <h4>订单管理</h4>
+                                        <hr/>
+                                        <div class="media align-items-center" style="padding-bottom:30px">
+                                            <img alt="" src="../../static/lag/goods/goods4.jpg">
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <h4>商品：A</h4>
+                                                </a>
+                                                <p>
+                                                    数量：1<br/>
+                                                    订单状态：配送中<br/>
+                                                    收货人：Userid-<a href="#">10508</a><br/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin:0;padding:5px">
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">联系收货人</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal;">
+                                                        联系方式：</h4>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                        <a href="#">手机号码</a></h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">物流状态</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal">
+                                                        订单状态：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    配送中</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="media align-items-center" style="padding-bottom:30px">
+                                            <img alt="" src="../../static/lag/goods/goods4.jpg">
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <h4>商品：C</h4>
+                                                </a>
+                                                <p>
+                                                    数量：2<br/>
+                                                    订单状态：配送中<br/>
+                                                    收货人：Userid-<a href="#">27500</a><br/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin:0;padding:5px">
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">联系收货人</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal;">
+                                                        联系方式：</h4>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                        <a href="#">手机号码</a></h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">物流状态</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal">
+                                                        订单状态：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    配送中</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="media align-items-center" style="padding-bottom:30px">
+                                            <img alt="" src="../../static/lag/goods/goods4.jpg">
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <h4>商品：B</h4>
+                                                </a>
+                                                <p>
+                                                    数量：7<br/>
+                                                    订单状态：配送中<br/>
+                                                    收货人：Userid-<a href="#">11500</a><br/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin:0;padding:5px">
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">联系收货人</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal;">
+                                                        联系方式：</h4>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                        <a href="#">手机号码</a></h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">物流状态</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal">
+                                                        订单状态：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    配送中</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="service" role="tabpanel"
+                                 aria-labelledby="service-tab">
+                                <div class="container border-top-generic blog_area single-post-area section_gap posts-list"
+                                     style="padding-top:20px">
+                                    <div class="blog-author" style="margin-top:10px">
+                                        <hr/>
+                                        <h4>客户服务</h4>
+                                        <hr/>
+                                        <div class="row" style="margin:0;padding:5px">
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">售后管理</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal;">
+                                                        待处理数：</h4>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                        <a href="#">2</a></h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">退款管理</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal">
+                                                        待处理数：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    0</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin:0;padding:5px">
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">投诉管理</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal;">
+                                                        状态：</h4>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                        正常</h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">举报管理</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal">
+                                                        待处理数：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    <a href="#">1</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin:0;padding:5px">
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">咨询回复</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal;">
+                                                        待处理数：</h4>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                        <a href="#">1</a></h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row" style="margin:0">
+                                                    <a class="genric-btn primary-border small" href="#">异常记录</a>
+                                                    <h4 style="margin-top: 4px;margin-bottom: 4px;margin-left:30px;font-weight:normal">
+                                                        状态：</h4><h4
+                                                        style="margin-top: 4px;margin-bottom: 4px;font-weight:normal">
+                                                    正常</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="trade" role="tabpanel"
+                                 aria-labelledby="trade-tab">
+                                <h4>交易数据</h4>
+                                <hr/>
+                                <h5>线上交易量</h5>
+                                <hr/>
+                                <h5>线上交易额数据</h5>
+                                <hr/>
+                                <h5>线下交易量数据</h5>
+                                <hr/>
+                                <h5>线下交易额数据</h5>
+                                <hr/>
+                                <h5>访客人数</h5>
+                                <hr/>
+                            </div>
+
+
+                            <div class="tab-pane fade" id="employee" role="tabpanel"
+                                 aria-labelledby="employee-tab">
+
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>店员工号</th>
+                                        <th>店员姓名</th>
+                                        <th>联系方式</th>
+                                        <th>业绩考核</th>
+                                        <th>店员薪酬</th>
+                                        <th>违规记录</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th>01</th>
+                                        <th>LSQ</th>
+                                        <th><a href="#">联系</a></th>
+                                        <th>
+                                            <div class="percentage" style="padding-top:7px">
+                                                <div class="progress">
+                                                    <div class="progress-bar color-1" role="progressbar"
+                                                         aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                                                         style="width: 80%"></div>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>8000</th>
+                                        <th>无</th>
+                                    </tr>
+                                    <tr>
+                                        <th>02</th>
+                                        <th>WCS</th>
+                                        <th><a href="#">联系</a></th>
+                                        <th>
+                                            <div class="percentage" style="padding-top:7px">
+                                                <div class="progress">
+                                                    <div class="progress-bar color-1" role="progressbar"
+                                                         aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                                                         style="width: 30%"></div>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>5000</th>
+                                        <th>无</th>
+                                    </tr>
+                                    <tr>
+                                        <th>03</th>
+                                        <th>PDY</th>
+                                        <th><a href="#">联系</a></th>
+                                        <th>
+                                            <div class="percentage" style="padding-top:7px">
+                                                <div class="progress">
+                                                    <div class="progress-bar color-1" role="progressbar"
+                                                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                         style="width: 50%"></div>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>3000</th>
+                                        <th>无</th>
+                                    </tr>
+                                    <tr>
+                                        <th>04</th>
+                                        <th>AHN</th>
+                                        <th><a href="#">联系</a></th>
+                                        <th>
+                                            <div class="percentage" style="padding-top:7px">
+                                                <div class="progress">
+                                                    <div class="progress-bar color-1" role="progressbar"
+                                                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                         style="width: 100%"></div>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>10000</th>
+                                        <th>无</th>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-area section_gap" style="padding: 100px 0px;margin:0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h6>关于我们</h6>
+                    <p>
+                        Research of the transformation for classic apparel industry - facing to New Retail
+                    </p>
+                    <p>16LE - COME - TJU</p>
+                </div>
+            </div>
+            <div class="col-lg-5  col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h6>服装新零售平台</h6>
+                    <p>大学生创新创业项目：面向传统服装业转型的新零售解决方案</p>
+                    <div id="mc_embed_signup">
+                        <div style="position: absolute; left: -5000px;">
+                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" type="text" value="">
+                        </div>
+                        <div class="info"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+                <div class="single-footer-widget">
+                    <h6>关注我们</h6>
+                    <p>平台源代码见</p>
+                    <div class="footer-social d-flex align-items-center">
+                        <a href="https://github.com/LJC-FVNR/NR-XLSPT"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            copyright
+        </div>
+    </div>
+</footer>
+<script src="../static/lag/js/jquery-3.2.1.min.js"></script>
+<script src="../static/lag/js/popper.js"></script>
+<script src="../static/lag/js/bootstrap.min.js"></script>
+<script src="../static/lag/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="../static/lag/vendors/isotope/isotope-min.js"></script>
+<script src="../static/lag/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="../static/lag/js/jquery.ajaxchimp.min.js"></script>
+<script src="../static/lag/js/mail-script.js"></script>
+<script src="../static/lag/js/custom.js"></script>
+</body>
+</html>

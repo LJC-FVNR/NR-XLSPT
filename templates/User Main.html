@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新零售服装平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="icon" href="../static/lag/img/favicon.png" type="image/png"/>
+    <title>Lagoon Logistics</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/lag/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/linericon/style.css"/>
+    <link rel="stylesheet" href="../static/lag/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/owl-carousel/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/nice-select/css/nice-select.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/animate-css/animate.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/jquery-ui/jquery-ui.css"/>
+    <!-- main css -->
+    <link rel="stylesheet" href="../static/lag/css/style.css"/>
+    <link rel="stylesheet" href="../static/lag/css/responsive.css"/>
+<body>
+<header class="header_area">
+    <div class="top_menu d-lg-block d-none">
+        <div class="container">
+            <div class="float-left">
+                <ul class="left_side">
+                    <li>
+                        <a href="{{ url_for('begin') }}">
+                            <i class="fa fa-globe"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-wechat"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-tags"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="float-right">
+                <ul class="right_side">
+                    <li>
+                        <a href="https://github.com/LJC-FVNR/NR-XLSPT">
+                            <i class="fa fa-envelope"></i>
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg w-100">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="{{ url_for('begin') }}">
+                <img alt="" src="../static/lag/img/logo.png">
+            </a>
+            <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarSupportedContent"
+                    aria-label="Toggle navigation" type="button" data-target="#navbarSupportedContent"
+                    data-toggle="collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                <div class="row w-100">
+                    <div class="col-lg-12 pr-lg-0">
+                        <ul class="nav navbar-nav ml-auto justify-content-end">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ url_for('usermain') }}">主页</a>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" aria-expanded="false"
+                                   aria-haspopup="true" href="#" data-toggle="dropdown">导引</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('catabrand') }}">品牌</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('category') }}">类别</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" aria-expanded="false"
+                                   aria-haspopup="true" href="#" data-toggle="dropdown">用户</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('userinformation') }}">信息</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('userinformation') }}">购物车</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="https://github.com/LJC-FVNR/NR-XLSPT">联系</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<section class="home-blog-area" style="margin-bottom: 300px">
+    <div class="container">
+        <div class="row justify-content-center section-title-wrap" style="margin-bottom: 30px">
+            <div class="col-lg-12">
+                <h5>NEW RETAIL - NEW EXPERIENCE</h5>
+                <h2>
+                    感受新零售 感受新体验
+                </h2>
+            </div>
+        </div>
+        <div id="mc_embed_signup" class="row justify-content-center section-title-wrap" style="margin-bottom: 30px">
+            <form class="form-inline"
+                  action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                  method="get" target="_blank" novalidate="true">
+                <input name="Search" class="form-control" required="" onfocus="this.placeholder = ''"
+                       onblur="this.placeholder = '搜索'" type="Search" placeholder="搜索" style="border-radius: 0;">
+                <button class="click-btn btn btn-default" onclick="alert('对不起，本服务为VIP专属服务')"
+                        style="background-color:#e7b9ac;color:#fff;border-radius: 0"><i class="fa fa-arrow-right"
+                                                                                        aria-hidden="true"></i></button>
+                <div style="position: absolute; left: -5000px;">
+                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" type="text" value="">
+                </div>
+            </form>
+        </div>
+        <div class="row w-100 justify-content-center" style="padding-bottom:20px">
+            <div class="col-lg-12 pr-lg-0 justify-content-center" style="text-align: center;">
+                <ul class="nav navbar-nav justify-content-center" style="display: inline;text-align: center;">
+                    <li class="nav-item" style="float:right">
+                        <a class="genric-btn danger-border" href="{{ url_for('category') }}"
+                        >类别</a>
+                    </li>
+                    <li class="nav-item" style="float:left">
+                        <a class="genric-btn danger-border" href="{{ url_for('catabrand') }}"
+                        >品牌</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!---------------循环--------------------->
+        <hr>
+        <div class="row justify-content-center">
+            <h4 style="margin-bottom:0;color:#ff6b66">商城推荐</h4>
+        </div>
+        <div class="row">
+            {% for cl in cla %}
+                <div class="col-6">
+                    <hr>
+                    <div class="row justify-content-center">
+                        <h4 style="margin-bottom:0;color:#ff6b66">{{ cl }}</h4>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        {% for cate in goods["costume"] %}
+                            {% for article in goods["costume"][cate] %}
+                                {% if article['class'] == cl %}
+                                    {% if article["color"] == "white" %}
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-home-blog">
+                                                <div class="thumb">
+                                                    <img class="f-img img-fluid mx-auto" alt=""
+                                                         src="../static/lag/goods/{{ article['pic'] }}">
+                                                </div>
+                                                <div class="home-blog-box" style="padding: 35px 35px 20px;">
+                                                    <a href="{{ url_for('purchasing',goods_id=article['ID']) }}">
+                                                        <h4>{{ article['name'] }}</h4>
+                                                        <h3 style="color:#e8231f">{{ article['price'] }}</h3>
+                                                    </a>
+                                                    <p>
+                                                        评价 ：{{ article['comment'] }} &nbsp;&nbsp;
+                                                        销量 ：{{ article['sales'] }}
+                                                    </p>
+                                                    <div class="bottom d-flex">
+                                                        <a href="#">品牌：{{ article['brand'] }}</a>
+                                                        <a href="#">类型：{{ article['category'] }}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="col-lg-6 col-md-6 d-sm-block d-none">
+                                            <div class="single-home-blog">
+                                                <div class="thumb">
+                                                    <img class="f-img img-fluid mx-auto" alt=""
+                                                         src="../static/lag/goods/{{ article['pic'] }}">
+                                                </div>
+                                                <div class="overlay"></div>
+                                                <div class="home-blog-box border-0" style="padding: 35px 35px 20px;">
+                                                    <a href="{{ url_for('purchasing',goods_id=article['ID']) }}">
+                                                        <h4 class="text-white">{{ article['name'] }}</h4>
+                                                    </a>
+                                                    <h3 style="color:#f7fab6">{{ article['price'] }}</h3>
+                                                    <p class="text-white">
+                                                        评价 ：{{ article['comment'] }} &nbsp;&nbsp;
+                                                        销量 ：{{ article['sales'] }}
+                                                    </p>
+                                                    <div class="bottom d-flex">
+                                                        <a href="#" class="text-white">品牌：{{ article['brand'] }}</a>
+                                                        <a href="#" class="text-white">类型：{{ article['category'] }}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% else %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <!---------------循环--------------------->
+    </div>
+</section>
+<footer class="footer-area section_gap" style="padding: 100px 0px;margin:0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h6>关于我们</h6>
+                    <p>
+                        Research of the transformation for classic apparel industry - facing to New Retail
+                    </p>
+                    <p>16LE - COME - TJU</p>
+                </div>
+            </div>
+            <div class="col-lg-5  col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h6>服装新零售平台</h6>
+                    <p>大学生创新创业项目：面向传统服装业转型的新零售解决方案</p>
+                    <div id="mc_embed_signup">
+                        <div style="position: absolute; left: -5000px;">
+                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" type="text" value="">
+                        </div>
+                        <div class="info"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+                <div class="single-footer-widget">
+                    <h6>关注我们</h6>
+                    <p>平台源代码见</p>
+                    <div class="footer-social d-flex align-items-center">
+                        <a href="https://github.com/LJC-FVNR/NR-XLSPT"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            copyright
+        </div>
+    </div>
+</footer>
+
+<!--JavaScripts========================== -->
+<script src="../static/lag/js/jquery-3.2.1.min.js"></script>
+<script src="../static/lag/js/popper.js"></script>
+<script src="../static/lag/js/bootstrap.min.js"></script>
+<script src="../static/lag/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="../static/lag/vendors/isotope/isotope-min.js"></script>
+<script src="../static/lag/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="../static/lag/js/jquery.ajaxchimp.min.js"></script>
+<script src="../static/lag/js/mail-script.js"></script>
+<script src="../static/lag/js/custom.js"></script>
+</body>
+</html>

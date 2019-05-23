@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新零售服装平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="icon" href="../static/lag/img/favicon.png" type="image/png"/>
+    <title>Lagoon Logistics</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/lag/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/linericon/style.css"/>
+    <link rel="stylesheet" href="../static/lag/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/owl-carousel/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/nice-select/css/nice-select.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/animate-css/animate.css"/>
+    <link rel="stylesheet" href="../static/lag/vendors/jquery-ui/jquery-ui.css"/>
+    <!-- main css -->
+    <link rel="stylesheet" href="../static/lag/css/style.css"/>
+    <link rel="stylesheet" href="../static/lag/css/responsive.css"/>
+<body>
+<header class="header_area">
+    <div class="top_menu d-lg-block d-none">
+        <div class="container">
+            <div class="float-left">
+                <ul class="left_side">
+                    <li>
+                        <a href="{{ url_for('begin') }}">
+                            <i class="fa fa-globe"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-wechat"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-tags"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="float-right">
+                <ul class="right_side">
+                    <li>
+                        <a href="https://github.com/LJC-FVNR/NR-XLSPT">
+                            <i class="fa fa-envelope"></i>
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg w-100">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="{{ url_for('begin') }}">
+                <img alt="" src="../../static/lag/img/logo.png">
+            </a>
+            <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarSupportedContent"
+                    aria-label="Toggle navigation" type="button" data-target="#navbarSupportedContent"
+                    data-toggle="collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                <div class="row w-100">
+                    <div class="col-lg-12 pr-lg-0">
+                        <ul class="nav navbar-nav ml-auto justify-content-end">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('usermain') }}">主页</a>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" aria-expanded="false"
+                                   aria-haspopup="true" href="#" data-toggle="dropdown">导引</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('catabrand') }}">品牌</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('category') }}">类别</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" aria-expanded="false"
+                                   aria-haspopup="true" href="#" data-toggle="dropdown">用户</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('userinformation') }}">信息</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url_for('userinformation') }}">购物车</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="https://github.com/LJC-FVNR/NR-XLSPT">联系</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<section class="button-area">
+
+    <div class="container border-top-generic blog_area single-post-area section_gap posts-list"
+         style="padding-top:20px">
+        <div class="blog-author" style="margin-top:10px">
+            <div class="media align-items-center" style="padding-bottom:30px">
+                <img alt="" src="../../static/lag/goods/goods5.jpg">
+                <div class="media-body">
+                    <a href="#">
+                        <h4>用户：煎饼馅饼</h4>
+                    </a>
+                    <p>
+                        用户类型：普通会员<br>
+                        会员积分：3016209
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <h4>个人功能</h4>
+            <hr>
+            <div class="row" style="display: inline;">
+                <button class="genric-btn info-border w-25" type="submit">订阅</button>
+                <button class="genric-btn info-border w-25" type="submit">购物车</button>
+                <button class="genric-btn info-border w-25" type="submit">访问记录</button>
+                <button class="genric-btn info-border w-25" type="submit">联系客服</button>
+            </div>
+            <hr>
+            <h4>会员功能</h4>
+            <hr>
+            <div class="row" style="display: inline;">
+                <button class="genric-btn info-border w-25" type="submit">运费券礼包</button>
+                <button class="genric-btn info-border w-25" type="submit">免费上门退换</button>
+                <button class="genric-btn info-border w-25" type="submit">专属服务</button>
+                <button class="genric-btn info-border w-25" type="submit">折扣券</button>
+            </div>
+            <hr>
+            <h4>个人设置</h4>
+            <hr>
+
+            <div>
+                <div class="switch-wrap d-flex justify-content-between">
+                    <h5>开启智能推荐</h5>
+                    <div class="primary-switch">
+                        <input id="primary-switch1" type="checkbox" checked="">
+                        <label for="primary-switch1"></label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="switch-wrap d-flex justify-content-between">
+                    <h5>开启通知</h5>
+                    <div class="primary-switch">
+                        <input id="primary-switch2" type="checkbox" checked="">
+                        <label for="primary-switch2"></label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="switch-wrap d-flex justify-content-between">
+                    <h5>开启辅助功能</h5>
+                    <div class="primary-switch">
+                        <input id="primary-switch3" type="checkbox" checked="">
+                        <label for="primary-switch3"></label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer-area section_gap" style="padding: 100px 0px;margin:0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h6>关于我们</h6>
+                    <p>
+                        Research of the transformation for classic apparel industry - facing to New Retail
+                    </p>
+                    <p>16LE - COME - TJU</p>
+                </div>
+            </div>
+            <div class="col-lg-5  col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h6>服装新零售平台</h6>
+                    <p>大学生创新创业项目：面向传统服装业转型的新零售解决方案</p>
+                    <div id="mc_embed_signup">
+                        <div style="position: absolute; left: -5000px;">
+                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" type="text" value="">
+                        </div>
+                        <div class="info"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+                <div class="single-footer-widget">
+                    <h6>关注我们</h6>
+                    <p>平台源代码见</p>
+                    <div class="footer-social d-flex align-items-center">
+                        <a href="https://github.com/LJC-FVNR/NR-XLSPT"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            copyright
+        </div>
+    </div>
+</footer>
+</body>
+</html>
